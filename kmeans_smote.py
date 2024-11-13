@@ -210,7 +210,7 @@ class KMeansSMOTE(BaseOverSampler):
             if (imbalance_ratio < imbalance_ratio_threshold) and (minority_count > 1):
                 distances = euclidean_distances(cluster[mask])
                 non_diagonal_distances = distances[
-                    ~np.eye(distances.shape[0], dtype=np.bool)
+                    ~np.eye(distances.shape[0], dtype=np.bool_)
                 ]
                 average_minority_distance = np.mean( non_diagonal_distances )
                 if average_minority_distance is 0: average_minority_distance = 1e-1 # to avoid division by 0

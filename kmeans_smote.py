@@ -329,7 +329,7 @@ class KMeansSMOTE(BaseOverSampler):
                 minority_count = np.count_nonzero(y == minority_class_label)
                 smote_args = self._validate_smote_args(smote_args, minority_count)
                 oversampler = SMOTE(**smote_args)
-                X_smote, y_smote = oversampler.fit_sample(X, y)
+                X_smote, y_smote = oversampler.fit_resample(X, y)
                 resampled.append((
                     X_smote[y.size:,:],
                     y_smote[y.size:]))

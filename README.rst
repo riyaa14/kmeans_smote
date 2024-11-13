@@ -78,7 +78,7 @@ Example Usage
             'k_neighbors': 10
         }
     )
-    X_resampled, y_resampled = kmeans_smote.fit_sample(X, y)
+    X_resampled, y_resampled = kmeans_smote.fit_resample(X, y)
 
     [print('Class {} has {} instances after oversampling'.format(label, count))
      for label, count in zip(*np.unique(y_resampled, return_counts=True))]

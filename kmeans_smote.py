@@ -309,7 +309,7 @@ class KMeansSMOTE(BaseOverSampler):
                             # ignore warnings about minority class getting bigger than majority class
                             # since this would only be true within this cluster
                             warnings.filterwarnings(action='ignore', category=UserWarning, message=r'After over-sampling, the number of samples \(.*\) in class .* will be larger than the number of samples in the majority class \(class #.* \-\> .*\)')
-                            cluster_resampled_X, cluster_resampled_y = oversampler.fit_sample(cluster_X, cluster_y)
+                            cluster_resampled_X, cluster_resampled_y = oversampler.fit_resample(cluster_X, cluster_y)
 
                         if remove_index > -1:
                             # since SMOTE's results are ordered the same way as the data passed into it,
